@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 //icons
 import {
@@ -6,9 +7,12 @@ import {
     FaUser,
     FaAngleDown,
     FaBars,
+    FaTimes,
 } from "react-icons/fa";
 
 const Navbar = ({ toggleSidebar }) => {
+    const [ isSubmenuOpen, setSubmenuOpen ] = useState(false);
+
     return (
         <nav className="nav">
             <div className="nav__wrapper">
@@ -41,6 +45,34 @@ const Navbar = ({ toggleSidebar }) => {
                     <div className="nav__hamburger" onClick={toggleSidebar}>
                         <FaBars />
                     </div>
+                    <div
+                        className="nav__hamburger nav__hamburger--submenu"
+                        onClick={() => setSubmenuOpen(!isSubmenuOpen)}
+                    >
+                        <FaBars />
+                    </div>
+                </div>
+                <div
+                    className="nav__submenu"
+                    style={{
+                        transform : `${isSubmenuOpen ? "translateY(0)" : ""}`,
+                    }}
+                >
+                    <div
+                        className="nav__submenu__close-icon"
+                        onClick={() => setSubmenuOpen(!isSubmenuOpen)}
+                    >
+                        <FaTimes />
+                    </div>
+                    <div className="nav__submenu__dropdown">
+                        Catalog <FaAngleDown />
+                    </div>
+                    <ul className="nav__submenu__list">
+                        <li className="nav__submenu__item">Categories</li>
+                        <li className="nav__submenu__item">Payment</li>
+                        <li className="nav__submenu__item">Warranty</li>
+                        <li className="nav__submenu__item">Credit</li>
+                    </ul>
                 </div>
             </div>
         </nav>

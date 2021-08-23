@@ -139,10 +139,112 @@
   cursor: pointer;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .nav__hamburger {
     display: none;
   }
+}
+
+.nav__hamburger--submenu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav__hamburger--submenu {
+    display: initial;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav__hamburger--submenu {
+    display: none;
+  }
+}
+
+.nav__submenu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav__submenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 360px;
+    padding: 30px;
+    background: #287194;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: translateY(-110%);
+            transform: translateY(-110%);
+  }
+}
+
+@media (min-width: 992px) {
+  .nav__submenu {
+    display: none;
+  }
+}
+
+.nav__submenu__close-icon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav__submenu__dropdown {
+  margin: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav__submenu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  list-style: none;
+}
+
+.nav__submenu__list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.3;
+}
+
+.nav__submenu__item {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .sidebar {
