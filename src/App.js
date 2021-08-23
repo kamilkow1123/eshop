@@ -1,9 +1,19 @@
-function App() {
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+//components
+import Navbar from "./components/navigation/Navbar";
+import ProductCard from "./components/products/ProductCard";
+
+const App = () => {
     return (
-        <div className="App">
-            <h1>App</h1>
+        <div>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route path="/" component={ProductCard} />
+                </Switch>
+            </Router>
         </div>
     );
-}
+};
 
 export default App;
