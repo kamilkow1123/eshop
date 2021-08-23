@@ -8,7 +8,7 @@ import {
     FaBars,
 } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
     return (
         <nav className="nav">
             <div className="nav__wrapper">
@@ -38,7 +38,7 @@ const Navbar = () => {
                             <FaUser />
                         </div>
                     </div>
-                    <div className="nav__hamburger">
+                    <div className="nav__hamburger" onClick={toggleSidebar}>
                         <FaBars />
                     </div>
                 </div>
