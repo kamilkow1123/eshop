@@ -105,8 +105,88 @@
         color: $clr-light;
         cursor: pointer;
 
+        @include tablet {
+            display: none;
+        }
+
+        &--submenu {
+            display: none;
+
+            @include tablet {
+                display: initial;
+            }
+
+            @include desktop {
+                display: none;
+            }
+        }
+    }
+
+    &__submenu {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            width: 360px;
+            padding: 30px;
+            background: $clr-primary-400;
+            transition: all 0.4s ease-in-out;
+            transform: translateY(-110%);
+        }
+
         @include desktop {
             display: none;
+        }
+
+        &__close-icon {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: $clr-light;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        &__dropdown {
+            margin: 30px;
+            color: $clr-light;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+            width: 100%;
+            padding: 30px;
+            list-style: none;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                background-color: $clr-light;
+                opacity: 0.3;
+            }
+        }
+
+        &__item {
+            color: $clr-light;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
     }
 }
