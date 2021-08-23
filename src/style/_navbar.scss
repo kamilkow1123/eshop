@@ -1,0 +1,112 @@
+@import 'colors';
+@import 'fonts';
+@import 'media-queries';
+
+.nav {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background: $clr-primary-400;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 30px;
+    }
+
+    &__logo {
+        font-size: 20px;
+        font-weight: 700;
+        color: $clr-light;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &__menu {
+        display: none;
+        @include desktop {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            color: $clr-light;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -30px;
+            height: 40px;
+            width: 1px;
+            background-color: $clr-light;
+            opacity: 0.3;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+        @include desktop {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: $clr-light;
+            cursor: pointer;
+        }
+    }
+
+    &__group {
+        display: flex;
+        gap: 60px;
+    }
+
+    &__icons {
+        display: none;
+        color: $clr-light;
+
+        @include tablet {
+            display: flex;
+            gap: 30px;
+            position: relative;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -30px;
+            height: 40px;
+            width: 1px;
+            background-color: $clr-light;
+            opacity: 0.3;
+
+            @include desktop {
+                left: -30px;
+            }
+        }
+    }
+
+    &__icon {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    &__hamburger {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+        color: $clr-light;
+        cursor: pointer;
+
+        @include desktop {
+            display: none;
+        }
+    }
+}
