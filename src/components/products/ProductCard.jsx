@@ -1,4 +1,5 @@
 import chairImg from "../../images/chair.png";
+import chairImg2 from "../../images/chair2.png";
 import { FaStar } from "react-icons/fa";
 
 const ProductCard = () => {
@@ -20,7 +21,7 @@ const ProductCard = () => {
                             <span className="product__note">Code</span> 555555
                         </div>
                     </div>
-                    <div className="product__image">
+                    <div className="product__img">
                         <img src={chairImg} alt="product" />
                     </div>
                     <div className="product__info">
@@ -29,6 +30,17 @@ const ProductCard = () => {
                             <p className="product__price">599.00</p>
                             <p className="product__price--old">699.99</p>
                         </div>
+                    </div>
+                </div>
+                <div className="product__images">
+                    <div className="product__image">
+                        <img src={chairImg} alt="product" />
+                    </div>
+                    <div className="product__image">
+                        <img src={chairImg2} alt="product" />
+                    </div>
+                    <div className="product__image">
+                        <img src={chairImg} alt="product" />
                     </div>
                 </div>
             </div>
